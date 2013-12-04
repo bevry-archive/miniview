@@ -1,0 +1,46 @@
+{
+  "title": "MiniView",
+  "name": "miniview",
+  "version": "1.0.0",
+  "description": "blah",
+  "license": {
+    "type": "MIT"
+  },
+  "badges": {
+    "travis": true,
+    "npm": true,
+    "gittip": "bevry",
+    "flattr": "344188/balupton-on-Flattr",
+    "paypal": "QB8GQPZAH84N6"
+  },
+  "keywords": [
+    "view",
+    "backbone",
+    "backbone.js",
+    "spine",
+    "spinejs",
+    "spinemvc",
+    "microjs"
+  ],
+  "author": "2013+ Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
+  "maintainers": [
+    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
+  ],
+  "contributors": [],
+  "bugs": {
+    "url": "https://github.com/bevry/miniview/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bevry/miniview.git"
+  },
+  "homepage": "https://github.com/bevry/miniview",
+  "devDependencies": {
+    "coffee-script": "~1.6.3",
+    "projectz": "~0.2.7"
+  },
+  "main": "out/lib/view.js",
+  "scripts": {
+    "test": "echo \"no tests yet\""
+  }
+}
