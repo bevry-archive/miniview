@@ -19,7 +19,7 @@
 
 <!-- DESCRIPTION/ -->
 
-blah
+Miniature (Spine/Backbone like) views for your client-side app. Respects garbage collection.
 
 <!-- /DESCRIPTION -->
 
@@ -41,9 +41,23 @@ blah
 
 ## Usage
 
-@TODO
+``` coffeescript
+# Import
+MiniView = require('miniview').View
 
+# Extend MiniView
+class Editview extends MiniView
+	elements:
+		'.field-title :input': '$title'
+		'form': '$form'
 
+	events:
+		'submit form': 'submitForm'
+
+	submitForm: (e) =>
+		alert "Hello #{@$title.val()}""
+		@
+```
 
 
 <!-- HISTORY/ -->
@@ -83,8 +97,11 @@ No sponsors yet! Will you be the first?
 
 ### Contributors
 
-No contributors yet! Will you be the first?
-[Discover how you can contribute by heading on over to the `Contributing.md` file.](https://github.com/bevry/miniview/blob/master/Contributing.md#files)
+These amazing people have contributed code to this project:
+
+- Benjamin Lupton <b@lupton.cc> (https://github.com/balupton) - [view contributions](https://github.com/bevry/miniview/commits?author=balupton)
+
+[Become a contributor!](https://github.com/bevry/miniview/blob/master/Contributing.md#files)
 
 <!-- /BACKERS -->
 

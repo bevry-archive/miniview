@@ -2,7 +2,7 @@
   "title": "MiniView",
   "name": "miniview",
   "version": "1.0.0",
-  "description": "blah",
+  "description": "Miniature (Spine/Backbone like) views for your client-side app. Respects garbage collection.",
   "license": {
     "type": "MIT"
   },
@@ -26,7 +26,9 @@
   "maintainers": [
     "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
   ],
-  "contributors": [],
+  "contributors": [
+    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
+  ],
   "bugs": {
     "url": "https://github.com/bevry/miniview/issues"
   },
@@ -39,7 +41,7 @@
     "coffee-script": "~1.6.3",
     "projectz": "~0.2.7"
   },
-  "main": "out/lib/view.js",
+  "main": "./out/lib/view.js",
   "scripts": {
     "test": "echo \"no tests yet\""
   }
