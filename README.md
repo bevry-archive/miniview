@@ -1,4 +1,3 @@
-
 <!-- TITLE/ -->
 
 # MiniView
@@ -46,13 +45,20 @@ Miniature (Spine/Backbone like) views for your client-side app. Respects garbage
 MiniView = require('miniview').View
 
 # Extend MiniView
-class Editview extends MiniView
+class EditView extends MiniView
+	el: """
+		<div class="edit-view">
+			<form class="edit-form">
+				<input type="text" class="field-title"></input>
+			</form>
+		</div>
+		"""
+	
 	elements:
 		'.field-title :input': '$title'
-		'form': '$form'
 
 	events:
-		'submit form': 'submitForm'
+		'submit form.edit-form': 'submitForm'
 
 	submitForm: (e) =>
 		alert "Hello #{@$title.val()}""
