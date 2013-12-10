@@ -55,7 +55,7 @@ class View
 
 if typeof define == 'function' && define.amd
   define ->
-    View
+    {View}
 else if typeof module isnt 'undefined' and module.exports
   module.exports = {View}
 else
