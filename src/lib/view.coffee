@@ -53,4 +53,10 @@ class View
 		@$el.remove()
 		@
 
-module.exports = {View}
+if typeof define == 'function' && define.amd
+  define ->
+    View
+else if typeof module isnt 'undefined' and module.exports
+  module.exports = {View}
+else
+  this.View = View
