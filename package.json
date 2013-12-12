@@ -22,6 +22,7 @@
     "spinemvc",
     "microjs"
   ],
+  "browsers": true,
   "author": "2013+ Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
   "maintainers": [
     "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
@@ -39,7 +40,7 @@
   "homepage": "https://github.com/bevry/miniview",
   "devDependencies": {
     "coffee-script": "~1.6.3",
-    "projectz": "~0.2.7"
+    "projectz": "~0.3.0"
   },
   "main": "./out/lib/view.js",
   "scripts": {

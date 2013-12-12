@@ -27,9 +27,14 @@ Miniature (Spine/Backbone like) views for your client-side app. Respects garbage
 
 ## Install
 
-### [Node](http://nodejs.org/), [Browserify](http://browserify.org/)
+### [Node](http://nodejs.org/)
 - Use: `require('miniview')`
 - Install: `npm install --save miniview`
+
+### [Browserify](http://browserify.org/)
+- Use: `require('miniview')`
+- Install: `npm install --save miniview`
+- CDN URL: `//wzrd.in/bundle/miniview@1.0.0`
 
 ### [Ender](http://ender.jit.su/)
 - Use: `require('miniview')`
@@ -69,7 +74,7 @@ class EditView extends MiniView
 <!-- HISTORY/ -->
 
 ## History
-[Discover the change history by heading on over to the `History.md` file.](https://github.com/bevry/miniview/blob/master/History.md#files)
+[Discover the change history by heading on over to the `HISTORY.md` file.](https://github.com/bevry/miniview/blob/master/HISTORY.md#files)
 
 <!-- /HISTORY -->
 
@@ -78,7 +83,7 @@ class EditView extends MiniView
 
 ## Contribute
 
-[Discover how you can contribute by heading on over to the `Contributing.md` file.](https://github.com/bevry/miniview/blob/master/Contributing.md#files)
+[Discover how you can contribute by heading on over to the `CONTRIBUTING.md` file.](https://github.com/bevry/miniview/blob/master/CONTRIBUTING.md#files)
 
 <!-- /CONTRIBUTE -->
 
@@ -107,7 +112,7 @@ These amazing people have contributed code to this project:
 
 - Benjamin Lupton <b@lupton.cc> (https://github.com/balupton) - [view contributions](https://github.com/bevry/miniview/commits?author=balupton)
 
-[Become a contributor!](https://github.com/bevry/miniview/blob/master/Contributing.md#files)
+[Become a contributor!](https://github.com/bevry/miniview/blob/master/CONTRIBUTING.md#files)
 
 <!-- /BACKERS -->
 
