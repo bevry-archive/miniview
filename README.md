@@ -34,7 +34,7 @@ Miniature (Spine/Backbone like) views for your client-side app. Respects garbage
 ### [Browserify](http://browserify.org/)
 - Use: `require('miniview')`
 - Install: `npm install --save miniview`
-- CDN URL: `//wzrd.in/bundle/miniview@1.0.0`
+- CDN URL: `//wzrd.in/bundle/miniview@1.0.1`
 
 ### [Ender](http://ender.jit.su/)
 - Use: `require('miniview')`
@@ -45,30 +45,7 @@ Miniature (Spine/Backbone like) views for your client-side app. Respects garbage
 
 ## Usage
 
-``` coffeescript
-# Import
-MiniView = require('miniview').View
-
-# Extend MiniView
-class EditView extends MiniView
-	el: """
-		<div class="edit-view">
-			<form class="edit-form">
-				<input type="text" class="field-title"></input>
-			</form>
-		</div>
-		"""
-	
-	elements:
-		'.field-title :input': '$title'
-
-	events:
-		'submit form.edit-form': 'submitForm'
-
-	submitForm: (e) =>
-		alert "Hello #{@$title.val()}""
-		@
-```
+[View the interactive JSFiddle](http://jsfiddle.net/balupton/N4W28/)
 
 
 <!-- HISTORY/ -->
@@ -110,7 +87,7 @@ No sponsors yet! Will you be the first?
 
 These amazing people have contributed code to this project:
 
-- Benjamin Lupton <b@lupton.cc> (https://github.com/balupton) - [view contributions](https://github.com/bevry/miniview/commits?author=balupton)
+- [Benjamin Lupton](https://github.com/balupton) <b@lupton.cc> — [view contributions](https://github.com/bevry/miniview/commits?author=balupton)
 
 [Become a contributor!](https://github.com/bevry/miniview/blob/master/CONTRIBUTING.md#files)
 

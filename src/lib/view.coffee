@@ -1,6 +1,9 @@
 $ = @$ or window?.$ or (try require?('jquery'))
+{extendOnClass} = require('extendonclass')
 
 class View
+	@extend: extendOnClass
+
 	events: null
 	elements: null
 	el: null
