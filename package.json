@@ -1,7 +1,7 @@
 {
   "title": "MiniView",
   "name": "miniview",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Miniature (Spine/Backbone like) views for your client-side app. Respects garbage collection.",
   "license": {
     "type": "MIT"

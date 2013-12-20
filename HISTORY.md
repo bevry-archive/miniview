@@ -1,5 +1,8 @@
 # History
 
+- v1.1.1 December 20, 2013
+	- Fixed instantiation without `binds` being set (regression since v1.0.2)
+
 - v1.1.0 December 20, 2013
 	- Events are now always bound to the view
 	- Removed the `View::$` method

@@ -17,7 +17,7 @@ class View
 		# Dereference
 		@events = if @events then (JSON.parse JSON.stringify @events) else {}
 		@elements = if @elements then (JSON.parse JSON.stringify @elements) else {}
-		@binds = @binds.slice()
+		@binds = if @binds then @binds.slice() else []
 
 		# Apply
 		@setConfig(opts)
