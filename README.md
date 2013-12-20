@@ -34,7 +34,7 @@ Miniature (Spine/Backbone like) views for your client-side app. Respects garbage
 ### [Browserify](http://browserify.org/)
 - Use: `require('miniview')`
 - Install: `npm install --save miniview`
-- CDN URL: `//wzrd.in/bundle/miniview@1.0.1`
+- CDN URL: `//wzrd.in/bundle/miniview@1.0.2`
 
 ### [Ender](http://ender.jit.su/)
 - Use: `require('miniview')`

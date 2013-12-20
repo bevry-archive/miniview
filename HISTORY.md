@@ -1,5 +1,10 @@
 # History
 
+- v1.0.2 December 20, 2013
+	- Added `binds` option
+	- Dereference `binds`, `elements`, and `events`
+	- Renamed `opts.bind` to `opts.attach` in `refreshElements`
+
 - v1.0.1 December 20, 2013
 	- Now ignores bundling the jQuery dependency via the [`browser` field](https://gist.github.com/defunctzombie/4339901)
 	- Non-CoffeeScript users can now use `require('miniview').View.extend({})` to extend the Pointer Class

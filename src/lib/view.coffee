@@ -6,15 +6,22 @@ class View
 
 	events: null
 	elements: null
+	binds: null
+
 	el: null
 	$el: null
 
 	constructor: (opts) ->
-		@events ?= {}
-		@elements ?= {}
+		# Dereference
+		@events = if @events then (JSON.stringify JSON.parse @events) else {}
+		@elements = if @elements then (JSON.stringify JSON.parse @elements) else {}
+		@binds = @binds.slice()
 
+		# Apply
 		@setConfig(opts)
 
+		# Refresh
+		@refreshBinds()
 		@refreshElement()
 		@refreshElements()
 		@refreshEvents()
@@ -26,6 +33,12 @@ class View
 
 	$: (selector) ->
 		return @[selector] ? $(selector, @$el)
+
+	refreshBinds: ->
+		for methodName in @binds
+			if @[methodName].toString().indexOf('[native code]') is -1
+				@[methodName] = @[methodName].bind(@)
+		@
 
 	refreshElement: (el=null) ->
 		@el = el ? @el
@@ -39,7 +52,9 @@ class View
 		@
 
 	refreshEvents: (opts={}) ->
-		opts.bind = true
+		opts.detach = true
+		opts.attach = true
+
 		for own key,value of @events
 			split = key.indexOf(' ')
 			eventName = key.substr 0, split
@@ -47,12 +62,12 @@ class View
 			eventMethod = @[value]
 
 			# use live events
-			@$el.off(eventName, selector, eventMethod)
-			@$el.on(eventName, selector, eventMethod)	if opts.bind is true
+			@$el.off(eventName, selector, eventMethod)  if opts.detach is true
+			@$el.on(eventName, selector, eventMethod)   if opts.attach is true
 		@
 
 	destroy: ->
-		@refreshEvents(bind: false)
+		@refreshEvents(attach: false)
 		@$el.remove()
 		@
 
