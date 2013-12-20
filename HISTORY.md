@@ -1,5 +1,9 @@
 # History
 
+- v1.1.0 December 20, 2013
+	- Events are now always bound to the view
+	- Removed the `View::$` method
+
 - v1.0.2 December 20, 2013
 	- Fixed v1.0.2
 

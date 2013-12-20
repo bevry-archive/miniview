@@ -1,6 +1,8 @@
+# Import
 $ = @$ or window?.$ or (try require?('jquery'))
 {extendOnClass} = require('extendonclass')
 
+# Define
 class View
 	@extend: extendOnClass
 
@@ -26,49 +28,83 @@ class View
 		@refreshElements()
 		@refreshEvents()
 
-	setConfig: (opts={}) ->
-		for own key,value of opts
-			@[key] = value
+		# Chain
 		@
 
-	$: (selector) ->
-		return @[selector] ? $(selector, @$el)
+	setConfig: (opts={}) ->
+		# Apply the configuration
+		for own key,value of opts
+			@[key] = value
+
+		# Chain
+		@
 
 	refreshBinds: ->
+		# Bind methods to the view
 		for methodName in @binds
 			if @[methodName].toString().indexOf('[native code]') is -1
 				@[methodName] = @[methodName].bind(@)
+
+		# Chain
 		@
 
 	refreshElement: (el=null) ->
+		# Fallback
 		@el = el ? @el
+
+		# jQueryify
 		@$el = $(@el)
+
+		# de-jQueryify
 		@el = @$el.get(0)
+
+		# Chain
 		@
 
 	refreshElements: ->
+		# Cycle elements
 		for own selector,elementName of @elements
+			# Attach the element to the view
 			@[elementName] = $(selector, @$el)
+
+		# Chain
 		@
 
 	refreshEvents: (opts={}) ->
+		# Prepare
 		opts.detach = true
 		opts.attach = true
 
-		for own key,value of @events
+		# Cycle events
+		for own key,methodName of @events
+			# Bind events to the view
+			if @[methodName].toString().indexOf('[native code]') is -1
+				@[methodName] = @[methodName].bind(@)
+
+			# Determine the event and the selector
 			split = key.indexOf(' ')
 			eventName = key.substr 0, split
 			selector = key.substr split+1
-			eventMethod = @[value]
 
-			# use live events
+			# Determine the method
+			eventMethod = @[methodName]
+
+			# Use live events for the listening
 			@$el.off(eventName, selector, eventMethod)  if opts.detach is true
 			@$el.on(eventName, selector, eventMethod)   if opts.attach is true
+
+		# Chain
 		@
 
 	destroy: ->
-		@refreshEvents(attach: false)
+		# Detatch events
+		@refreshEvents(detach: true, attach: false)
+
+		# Remove the element
 		@$el.remove()
+
+		# Chain
 		@
 
+# Export
 module.exports = {View}
