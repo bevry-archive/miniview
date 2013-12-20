@@ -1,5 +1,8 @@
 # History
 
+- v1.2.0 December 20, 2013
+	- Removed `binds` option
+
 - v1.1.1 December 20, 2013
 	- Fixed instantiation without `binds` being set (regression since v1.0.2)
 

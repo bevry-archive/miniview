@@ -8,7 +8,6 @@ class View
 
 	events: null
 	elements: null
-	binds: null
 
 	el: null
 	$el: null
@@ -17,13 +16,11 @@ class View
 		# Dereference
 		@events = if @events then (JSON.parse JSON.stringify @events) else {}
 		@elements = if @elements then (JSON.parse JSON.stringify @elements) else {}
-		@binds = if @binds then @binds.slice() else []
 
 		# Apply
 		@setConfig(opts)
 
 		# Refresh
-		@refreshBinds()
 		@refreshElement()
 		@refreshElements()
 		@refreshEvents()
@@ -35,15 +32,6 @@ class View
 		# Apply the configuration
 		for own key,value of opts
 			@[key] = value
-
-		# Chain
-		@
-
-	refreshBinds: ->
-		# Bind methods to the view
-		for methodName in @binds
-			if @[methodName].toString().indexOf('[native code]') is -1
-				@[methodName] = @[methodName].bind(@)
 
 		# Chain
 		@
