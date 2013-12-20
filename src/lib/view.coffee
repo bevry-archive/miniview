@@ -13,8 +13,8 @@ class View
 
 	constructor: (opts) ->
 		# Dereference
-		@events = if @events then (JSON.stringify JSON.parse @events) else {}
-		@elements = if @elements then (JSON.stringify JSON.parse @elements) else {}
+		@events = if @events then (JSON.parse JSON.stringify @events) else {}
+		@elements = if @elements then (JSON.parse JSON.stringify @elements) else {}
 		@binds = @binds.slice()
 
 		# Apply

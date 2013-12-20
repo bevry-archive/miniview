@@ -1,6 +1,9 @@
 # History
 
 - v1.0.2 December 20, 2013
+	- Fixed v1.0.2
+
+- v1.0.2 December 20, 2013
 	- Added `binds` option
 	- Dereference `binds`, `elements`, and `events`
 	- Renamed `opts.bind` to `opts.attach` in `refreshElements`
